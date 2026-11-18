@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatic Reset | Kamil Janiszak</title>
+    <!-- Tailwind CSS do szybkiego, nowoczesnego stylowania -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-950 text-stone-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-stone-950">
+
+    <!-- GŁÓWNY KONTENER APLIKACJI -->
+    <div id="app" class="max-w-xl w-full mx-auto flex-grow flex flex-col">
+        
+        <!-- ========================================== -->
+        <!-- WIDOK 1: STRONA GŁÓWNA / MAPA PROGRAMU     -->
+        <!-- ========================================== -->
+        <section id="view-home" class="p-6 space-y-6">
+            <!-- Nagłówek -->
+            <header class="py-4 border-b border-stone-800/80 flex justify-between items-center">
+                <div>
+                    <h1 class="text-xs uppercase tracking-widest text-stone-400">Kamil Janiszak</h1>
+                    <h2 class="text-2xl font-light tracking-wide mt-0.5">Somatic Reset</h2>
+                </div>
+                <div class="text-right">
+                    <span id="progress-text" class="text-xs bg-stone-900 border border-stone-800 px-3 py-1.5 rounded-full text-amber-400 font-medium">Ukończono 0/6</span>
+                </div>
+            </header>
+
+            <!-- Powitanie -->
+            <div class="bg-gradient-to-br from-stone-900 to-stone-900/40 border border-stone-800 rounded-2xl p-5">
+                <span class="text-xs font-medium text-amber-500 uppercase tracking-wider">Moduł Startowy</span>
+                <h3 class="text-lg font-medium mt-1 mb-2">Witaj w procesie</h3>
+                <p class="text-xs text-stone-400 leading-relaxed mb-4">Zanim przejdziesz do tygodnia pierwszego, przejdź przez Moduł 0: poznaj mapę, zadbaj o bezpieczeństwo i zrób pierwszy oddech[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span).</p>
+                <button onclick="showView('view-lesson')" class="w-full py-3 bg-amber-500 hover:bg-amber-400 text-stone-950 font-medium rounded-xl transition text-sm flex items-center justify-center space-x-2">
+                    <span>Rozpocznij Moduł 0 (Lekcja 1)</span>
+                    <span>→</span>
+                </button>
+            </div>
+
+            <!-- Lista Tygodni (Mapa Programu) -->
+            <div class="space-y-3">
+                <h3 class="text-xs font-medium uppercase tracking-widest text-stone-500 px-1">Fazy Programu[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)</h3>
+                
+                <!-- Tydzień 1 -->
+                <div onclick="showView('view-lesson')" class="bg-stone-900/60 border border-stone-800 rounded-2xl p-4 hover:border-stone-700 transition cursor-pointer flex justify-between items-center">
+                    <div>
+                        <span class="text-[10px] uppercase font-semibold text-amber-500 tracking-wider">Faza 1 • Tydzień 1[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)</span>
+                        <h4 class="text-base font-medium mt-0.5">Zatrzymaj się &bull; Uziemienie</h4>
+                        <p class="text-xs text-stone-400 mt-1">Mobilność kręgosłupa i stóp[span_11](start_span)[span_11](end_span)</p>
+                    </div>
+                    <span class="text-stone-600 text-sm">▶</span>
+                </div>
+
+                <!-- Tydzień 2 -->
+                <div onclick="showView('view-audio')" class="bg-stone-900/40 border border-stone-800/50 rounded-2xl p-4 hover:border-stone-700 transition cursor-pointer flex justify-between items-center">
+                    <div>
+                        <span class="text-[10px] uppercase font-semibold text-stone-500 tracking-wider">Moduł 0 • Audio[span_12](start_span)[span_12](end_span)</span>
+                        <h4 class="text-base font-medium mt-0.5">Praktyka: Pierwszy Oddech</h4>
+                        <p class="text-xs text-stone-400 mt-1">9 minut głębokiego relaksu[span_13](start_span)[span_13](end_span)</p>
+                    </div>
+                    <span class="text-stone-600 text-sm">🎵</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- WIDOK 2: EKRAN LEKCJI WIDEO                -->
+        <!-- ========================================== -->
+        <section id="view-lesson" class="p-6 space-y-6 hidden">
+            <!-- Nawigacja wstecz -->
+            <header class="py-2 flex items-center justify-between border-b border-stone-800/80">
+                <button onclick="showView('view-home')" class="text-xs uppercase tracking-widest text-stone-400 hover:text-stone-200 transition">← Wróć do mapy</button>
+                <span class="text-xs text-amber-500 font-medium">Moduł 0 • Lekcja 1[span_14](start_span)[span_14](end_span)[span_15](start_span)[span_15](end_span)</span>
+            </header>
+
+            <div>
+                <h2 class="text-2xl font-light tracking-wide mb-1">Witaj i mapa programu</h2>
+                <p class="text-sm text-stone-400">Obejrzyj wideo wprowadzenia i pobierz mapę na swój start[span_16](start_span)[span_16](end_span)[span_17](start_span)[span_17](end_span).</p>
+            </div>
+
+            <!-- Odtwarzacz Wideo -->
+            <div class="relative w-full aspect-video bg-stone-900 rounded-2xl overflow-hidden border border-stone-800 shadow-2xl flex items-center justify-center">
+                <!-- Symulacja odtwarzacza Vimeo/YouTube (tutaj wklejasz właściwy iframe) -->
+                <div class="text-center p-4">
+                    <span class="text-3xl mb-2 block">▶️</span>
+                    <p class="text-xs text-stone-400">[ Odtwarzacz Wideo: Witaj i mapa programu ][span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span)</p>
+                </div>
+            </div>
+
+            <!-- Materiały do pobrania (PDF) -->
+            <div class="bg-stone-900/60 border border-stone-800 rounded-2xl p-4 space-y-3">
+                <h3 class="text-xs font-medium uppercase tracking-widest text-stone-400">Materiały do pobrania</h3>
+                <a href="#" onclick="alert('Pobieranie pliku PDF: Mapa Programu'); return false;" class="flex items-center justify-between p-3 bg-stone-800/40 rounded-xl hover:bg-stone-800 transition">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-amber-500 text-lg">📄</span>
+                        <div>
+                            <p class="text-sm font-medium">Mapa Programu (6 tygodni)</p>
+                            <p class="text-xs text-stone-400">PDF • 1 strona[span_20](start_span)[span_20](end_span)</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-amber-500/10 text-amber-400 px-3 py-1.5 rounded-lg font-medium">Pobierz</span>
+                </a>
+            </div>
+
+            <!-- Przycisk ukończenia -->
+            <button onclick="completeLesson()" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-stone-950 font-medium rounded-xl transition shadow-lg shadow-amber-500/10 text-center">
+                Oznacz lekcję jako ukończoną ✓
+            </button>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- WIDOK 3: EKRAN PRAKTYKI AUDIO              -->
+        <!-- ========================================== -->
+        <section id="view-audio" class="p-6 space-y-6 hidden">
+            <!-- Nawigacja wstecz -->
+            <header class="py-2 flex items-center justify-between border-b border-stone-800/80">
+                <button onclick="showView('view-home')" class="text-xs uppercase tracking-widest text-stone-400 hover:text-stone-200 transition">← Wróć do mapy</button>
+                <span class="text-xs text-amber-500 font-medium">Moduł 0 • Audio[span_21](start_span)[span_21](end_span)</span>
+            </header>
+
+            <div class="text-center py-6">
+                <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold">Praktyka Codzienna</span>
+                <h2 class="text-2xl font-light tracking-wide mt-1 mb-2">Pierwszy Oddech[span_22](start_span)[span_22](end_span)</h2>
+                <p class="text-sm text-stone-400 max-w-xs mx-auto">Ułóż się wygodnie, zamknij oczy i pozwól, by oddech zresetował Twój układ nerwowy[span_23](start_span)[span_23](end_span).</p>
+            </div>
+
+            <!-- Niestandardowy Odtwarzacz Audio -->
+            <div class="bg-stone-900 border border-stone-800 rounded-3xl p-6 space-y-6 shadow-xl">
+                <div class="flex justify-between text-xs text-stone-400">
+                    <span>0:00</span>
+                    <span class="text-amber-400 font-medium">9:00[span_24](start_span)[span_24](end_span)</span>
+                </div>
+                <!-- Pasek postępu audio -->
+                <div class="w-full bg-stone-800 h-2 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 w-1/4 h-full rounded-full"></div>
+                </div>
+                <!-- Przyciski sterowania -->
+                <div class="flex items-center justify-center space-x-6 pt-2">
+                    <button class="w-16 h-16 bg-amber-500 hover:bg-amber-400 text-stone-950 rounded-full flex items-center justify-center text-xl transition shadow-lg shadow-amber-500/20" onclick="alert('Odtwarzanie audio aktywowane')">
+                        ▶
+                    </button>
+                </div>
+            </div>
+
+            <button onclick="showView('view-home')" class="w-full py-3 bg-stone-900 border border-stone-800 text-stone-300 rounded-xl hover:bg-stone-800 transition text-sm">
+                Wróć do listy modułów
+            </button>
+        </section>
+
+    </div>
+
+    <!-- Stopka -->
+    <footer class="max-w-xl w-full mx-auto px-6 py-6 text-center border-t border-stone-900 text-xs text-stone-600">
+        Somatic Reset &bull; Kamil Janiszak[span_25](start_span)[span_25](end_span)
+    </footer>
+
+    <!-- Prosty skrypt obsługujący przełączanie widoków w aplikacji -->
+    <script>
+        function showView(viewId) {
+            // Ukryj wszystkie widoki
+            document.getElementById('view-home').classList.add('hidden');
+            document.getElementById('view-lesson').classList.add('hidden');
+            document.getElementById('view-audio').classList.add('hidden');
+            
+            // Pokaż wybrany widok
+            document.getElementById(viewId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function completeLesson() {
+            alert('Świetnie! Postęp został zapisany.');
+            document.getElementById('progress-text').innerText = 'Ukończono 1/6';
+            showView('view-home');
+        }
+    </script>
+</body>
+</html>
